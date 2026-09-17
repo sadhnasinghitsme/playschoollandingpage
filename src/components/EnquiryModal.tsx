@@ -155,7 +155,18 @@ export default function EnquiryModal({ isOpen, onClose, onSubmitted }: EnquiryMo
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-brand-ink/60 p-4 backdrop-blur-sm"
+      /* Backdrop — inline style ensures z-index and position are never
+         stripped by Tailwind's purge or overridden by a parent transform */
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 9999,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "rgba(42,36,56,0.7)",
+        padding: "1rem",
+      }}
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
@@ -166,7 +177,17 @@ export default function EnquiryModal({ isOpen, onClose, onSubmitted }: EnquiryMo
         aria-modal="true"
         aria-labelledby="enquiry-modal-heading"
         aria-describedby="enquiry-modal-subtext"
-        className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl bg-white p-6 shadow-soft sm:p-8"
+        /* Card — explicit width/max-width so it's never off-screen on mobile */
+        style={{
+          position: "relative",
+          width: "90%",
+          maxWidth: "28rem",
+          maxHeight: "90dvh",
+          overflowY: "auto",
+          borderRadius: "1.5rem",
+          backgroundColor: "#ffffff",
+          padding: "1.25rem",
+        }}
       >
         <button
           type="button"

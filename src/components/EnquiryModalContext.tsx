@@ -16,60 +16,77 @@ type EnquiryModalContextValue = {
 
 const EnquiryModalContext = createContext<EnquiryModalContextValue | null>(null);
 
-const SHOWN_KEY = "sks_enquiry_modal_shown";
-const SUBMITTED_KEY = "sks_enquiry_submitted";
-const AUTO_OPEN_SCROLL_PERCENT = 50;
+const SHOWN_KEY = "enquiryShown";
 
-function readFlag(key: string): boolean {
-  try {
-    return sessionStorage.getItem(key) === "true";
-  } catch {
-    return false;
-  }
+function hasBeenShown(): boolean {
+  try { return sessionStorage.getItem(SHOWN_KEY) === "true"; } catch { return false; }
 }
 
-function writeFlag(key: string) {
-  try {
-    sessionStorage.setItem(key, "true");
-  } catch {
-    // sessionStorage unavailable (e.g. private browsing) — the popup will
-    // simply be able to re-open on a hard refresh, which is an acceptable
-    // fallback rather than a crash.
-  }
+function markShown() {
+  try { sessionStorage.setItem(SHOWN_KEY, "true"); } catch { /* private browsing */ }
 }
 
 export function EnquiryModalProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = useCallback(() => {
-    setIsOpen(true);
-    writeFlag(SHOWN_KEY);
-  }, []);
-
+  // Manual open — always works regardless of session flag.
+  const openModal = useCallback(() => setIsOpen(true), []);
   const closeModal = useCallback(() => setIsOpen(false), []);
-
-  const markSubmitted = useCallback(() => {
-    writeFlag(SUBMITTED_KEY);
-  }, []);
+  const markSubmitted = useCallback(() => markShown(), []);
 
   useEffect(() => {
-    if (readFlag(SHOWN_KEY) || readFlag(SUBMITTED_KEY)) return;
+    // Already shown this session — skip attaching any listeners.
+    if (hasBeenShown()) return;
 
-    function handleScroll() {
-      const scrollTop = window.scrollY;
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (maxScroll <= 0) return;
+    // Cache scrollHeight so we're not hitting the DOM on every event.
+    // Refresh it on resize because mobile address-bar changes shift it.
+    let totalHeight = document.documentElement.scrollHeight;
 
-      const scrolledPercent = (scrollTop / maxScroll) * 100;
-      if (scrolledPercent >= AUTO_OPEN_SCROLL_PERCENT) {
-        window.removeEventListener("scroll", handleScroll);
-        openModal();
+    function getProgress(): number {
+      // scrollY + innerHeight gives the bottom edge of the visible viewport.
+      // Dividing by scrollHeight gives 0→1 progress through the document.
+      return (window.scrollY + window.innerHeight) / totalHeight;
+    }
+
+    function tryFire() {
+      if (hasBeenShown()) return; // double-guard against race
+
+      const progress = getProgress();
+
+      // Primary threshold: past 50%.
+      // Fallback: within 120px of the bottom (handles short mobile pages
+      // where 50% is reached before meaningful content is seen).
+      const nearBottom =
+        document.documentElement.scrollHeight - window.scrollY - window.innerHeight < 120;
+
+      if (progress > 0.5 || nearBottom) {
+        cleanup();
+        markShown();       // set flag BEFORE state update — race-safe
+        setIsOpen(true);
       }
     }
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [openModal]);
+    function onResize() {
+      // Re-cache after orientation change / address-bar collapse.
+      totalHeight = document.documentElement.scrollHeight;
+      tryFire(); // also check immediately in case resize pushed us past threshold
+    }
+
+    function cleanup() {
+      window.removeEventListener("scroll",    tryFire);
+      window.removeEventListener("touchend",  tryFire);   // iOS: position committed on lift
+      window.removeEventListener("touchmove", tryFire);   // Android: position updates during drag
+      window.removeEventListener("resize",    onResize);
+    }
+
+    // passive:true — never blocks scrolling on mobile.
+    window.addEventListener("scroll",    tryFire,  { passive: true });
+    window.addEventListener("touchend",  tryFire,  { passive: true });
+    window.addEventListener("touchmove", tryFire,  { passive: true });
+    window.addEventListener("resize",    onResize, { passive: true });
+
+    return cleanup;
+  }, []); // runs once on mount
 
   return (
     <EnquiryModalContext.Provider value={{ openModal }}>
