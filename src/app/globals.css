@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-brand-ink font-body;
+  background-color: #fffaf3;
+  /* Doodle pattern (public/bg-pattern.jpg) tiled behind the whole page.
+     Section backgrounds above it (see each section's className) are
+     semi-transparent so this shows through at a controlled, readable level. */
+  background-image: url("/bg-pattern.jpg");
+  background-repeat: repeat;
+  background-size: 360px auto;
+  background-attachment: fixed;
+}
+
+/* iOS Safari mishandles `background-attachment: fixed` (jank/scroll bugs),
+   so fall back to a normal scrolling background on small/touch screens. */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-heading;
+}
+
+/* Visible focus ring for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #3d7eff;
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+.section-blob {
+  position: absolute;
+  border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+  filter: blur(0px);
+  z-index: 0;
+  pointer-events: none;
+}
