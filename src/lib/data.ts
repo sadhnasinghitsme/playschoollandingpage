@@ -4,35 +4,24 @@ export const SCHOOL_NAME = "SKS World School";
 export const SCHOOL_LOCATION = "Greater Noida West";
 export const SESSION = "2026-27";
 
-// PLACEHOLDER: replace with the real admissions office number.
-export const PHONE_DISPLAY = "+91 98765 43210";
-export const PHONE_TEL = "+919876543210";
+export const PHONE_DISPLAY = "+91-9891081270";
+export const PHONE_TEL = "+919891081270";
 
-// PLACEHOLDER: replace with the real WhatsApp business number.
-export const WHATSAPP_NUMBER = "919876543210";
+export const WHATSAPP_NUMBER = "919891081270";
 export const WHATSAPP_MESSAGE = encodeURIComponent(
   `Hi SKS World School, I would like to enquire about admissions for session ${SESSION} (Playschool to Class 5). Please share more details.`
 );
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
-// PLACEHOLDER: replace with real address / email.
-export const SCHOOL_ADDRESS =
-  "Plot No. 00, Sector-00, Greater Noida West, Uttar Pradesh 201306";
-export const SCHOOL_EMAIL = "admissions@skseworldschool-placeholder.com";
+export const SCHOOL_ADDRESS = "HS-04, Sector-16, Greater Noida West, (U.P)";
+export const SCHOOL_EMAIL = "contact@skswsgnw.ac.in";
 
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Curriculum", href: "#curriculum" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
-];
-
-export const SOCIAL_LINKS = [
-  { label: "Facebook", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "YouTube", href: "#" },
-  { label: "LinkedIn", href: "#" },
+  { label: "Home", href: "/#home" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Curriculum", href: "/#curriculum" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export type UspItem = {
@@ -260,9 +249,10 @@ export const GALLERY_IMAGES = [
 ];
 
 export const FOOTER_QUICK_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Curriculum", href: "#curriculum" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Enquire Now", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Curriculum", href: "/#curriculum" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Enquire Now", href: "/#contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];

@@ -5,7 +5,6 @@ import {
   PHONE_TEL,
   SCHOOL_ADDRESS,
   SCHOOL_EMAIL,
-  SOCIAL_LINKS,
 } from "@/lib/data";
 
 export default function Footer() {
@@ -27,18 +26,6 @@ export default function Footer() {
             A nurturing school in Greater Noida West dedicated to holistic,
             joyful learning for Playschool through Class 5 students.
           </p>
-          <div className="mt-6 flex gap-3">
-            {SOCIAL_LINKS.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-sm font-bold transition hover:border-brand-orange hover:text-brand-orange"
-              >
-                {social.label.charAt(0)}
-              </a>
-            ))}
-          </div>
         </div>
 
         <div>

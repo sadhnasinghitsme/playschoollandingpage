@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-brand-cream/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="#home" className="flex items-center gap-3">
+        <Link href="/#home" className="flex items-center gap-3">
           <Image
             src="/sks-logo.png"
             alt="SKS World School logo"
