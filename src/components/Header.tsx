@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { NAV_LINKS, PHONE_DISPLAY, PHONE_TEL } from "@/lib/data";
 import { useEnquiryModal } from "./EnquiryModalContext";
@@ -12,18 +13,17 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-brand-cream/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="#home" className="flex items-center gap-2">
-          <span
-            aria-hidden="true"
-            className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-orange text-lg font-extrabold text-white shadow-soft"
-          >
-            SKS
-          </span>
-          <span className="font-heading text-lg font-extrabold leading-tight text-brand-ink sm:text-xl">
-            SKS World School
-            <span className="block text-xs font-semibold text-brand-ink/60">
-              Greater Noida West
-            </span>
+        <Link href="#home" className="flex items-center gap-3">
+          <Image
+            src="/sks-logo.png"
+            alt="SKS World School logo"
+            width={220}
+            height={68}
+            priority
+            className="h-9 w-auto sm:h-11"
+          />
+          <span className="hidden text-xs font-semibold text-brand-ink/60 sm:block">
+            Greater Noida West
           </span>
         </Link>
 

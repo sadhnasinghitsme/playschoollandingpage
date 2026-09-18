@@ -30,12 +30,10 @@ export default function WhyChooseUs() {
           <Dot className="bottom-4 right-6" color="bg-brand-orange" size={12} />
 
           <BlobFrame className="aspect-[7/6] w-full">
-            {/* PLACEHOLDER IMAGE — replace with a real photo of the campus / classrooms */}
             <Image
-              src="https://placehold.co/700x600/1FB6A6/FFFFFF?text=Campus+Photo+Placeholder"
-              alt="Placeholder photo of the SKS World School campus — replace with a real photo"
+              src="/C0318T01.JPG"
+              alt="Children and a teacher in the SKS World School indoor activity area"
               fill
-              unoptimized
               sizes="(max-width: 1024px) 90vw, 45vw"
               className="object-cover"
             />

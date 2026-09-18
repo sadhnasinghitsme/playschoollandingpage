@@ -22,7 +22,7 @@ export default function BlobFrame({
         aria-hidden="true"
         className="absolute -inset-3 rounded-blob border-4 border-brand-teal sm:-inset-4"
       />
-      <div className="relative overflow-hidden rounded-blob shadow-soft">{children}</div>
+      <div className="absolute inset-0 overflow-hidden rounded-blob shadow-soft">{children}</div>
     </div>
   );
 }

@@ -79,13 +79,11 @@ export default function Hero() {
           />
 
           <ScallopFrame frameColor="bg-brand-teal" className="aspect-[4/5] w-full">
-            {/* PLACEHOLDER IMAGE — replace with a real photo of happy children at SKS World School */}
             <Image
-              src="https://placehold.co/700x875/FFC93C/2A2438?text=Smiling+Children+%E2%80%94+Photo+Placeholder"
-              alt="Placeholder photo of smiling school children — replace with a real campus photo"
+              src="/C0328T01.JPG"
+              alt="SKS World School students playing together in the ball pit"
               fill
               priority
-              unoptimized
               sizes="(max-width: 1024px) 90vw, 45vw"
               className="object-cover"
             />

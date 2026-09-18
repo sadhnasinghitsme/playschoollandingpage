@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   FOOTER_QUICK_LINKS,
   PHONE_DISPLAY,
@@ -12,16 +13,14 @@ export default function Footer() {
     <footer className="bg-brand-ink text-white/80">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:px-8">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2">
-            <span
-              aria-hidden="true"
-              className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-orange text-lg font-extrabold text-white"
-            >
-              SKS
-            </span>
-            <span className="font-heading text-lg font-extrabold text-white">
-              SKS World School
-            </span>
+          <div className="inline-flex items-center rounded-2xl bg-white px-4 py-2">
+            <Image
+              src="/sks-logo.png"
+              alt="SKS World School logo"
+              width={220}
+              height={68}
+              className="h-9 w-auto"
+            />
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed">
             {/* PLACEHOLDER copy — replace with the real school description */}

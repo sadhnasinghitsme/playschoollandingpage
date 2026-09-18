@@ -14,13 +14,11 @@ export default function DayAtSks() {
         <div className="relative mx-auto order-2 w-full max-w-lg lg:order-1 lg:max-w-none">
           <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-brand-orange/15 blur-2xl" aria-hidden="true" />
           <div className="overflow-hidden rounded-[2rem] border-8 border-brand-cream shadow-soft">
-            {/* PLACEHOLDER IMAGE — replace with a real photo of the daily routine in action */}
             <Image
-              src="https://placehold.co/700x750/FFC93C/2A2438?text=Daily+Routine+Photo+Placeholder"
-              alt="Placeholder photo of a school day at SKS World School — replace with a real photo"
+              src="/C0364T01.JPG"
+              alt="SKS World School students with folded hands during morning assembly"
               width={700}
               height={750}
-              unoptimized
               className="h-auto w-full object-cover"
             />
           </div>

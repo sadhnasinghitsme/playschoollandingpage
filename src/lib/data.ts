@@ -248,12 +248,16 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-export const GALLERY_IMAGES = Array.from({ length: 8 }).map((_, i) => ({
-  src: `https://placehold.co/600x450/${
-    ["FF7A33", "FFC93C", "1FB6A6", "3D7EFF", "FF5C8D", "8B5CF6"][i % 6]
-  }/FFFFFF?text=Gallery+Photo+${i + 1}`,
-  alt: `Placeholder gallery photo ${i + 1} of SKS World School campus life`,
-}));
+export const GALLERY_IMAGES = [
+  { src: "/C0322T01.JPG", alt: "Students playing basketball in the indoor activity area" },
+  { src: "/C0318T01.JPG", alt: "Children and a teacher in the indoor activity area" },
+  { src: "/C0334T01.JPG", alt: "A joyful student sliding into a colourful ball pit" },
+  { src: "/C0329T01.JPG", alt: "A student coming down the indoor play slide" },
+  { src: "/C0333T01.JPG", alt: "Students on the slide with a teacher nearby" },
+  { src: "/C0355T01.JPG", alt: "Young children riding toy cars with their teachers" },
+  { src: "/C0365T01.JPG", alt: "Students and teachers during morning assembly" },
+  { src: "/C0367T01.JPG", alt: "Class lined up for morning assembly" },
+];
 
 export const FOOTER_QUICK_LINKS = [
   { label: "Home", href: "#home" },
