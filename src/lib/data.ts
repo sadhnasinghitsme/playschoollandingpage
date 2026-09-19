@@ -246,6 +246,8 @@ export const GALLERY_IMAGES = [
   { src: "/C0355T01.JPG", alt: "Young children riding toy cars with their teachers" },
   { src: "/C0365T01.JPG", alt: "Students and teachers during morning assembly" },
   { src: "/C0367T01.JPG", alt: "Class lined up for morning assembly" },
+  { src: "/C0328T01.JPG", alt: "Students playing together in the ball pit" },
+  { src: "/C0364T01.JPG", alt: "Students with folded hands during morning assembly" },
 ];
 
 export const FOOTER_QUICK_LINKS = [

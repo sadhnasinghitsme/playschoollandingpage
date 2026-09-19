@@ -80,8 +80,8 @@ export default function Hero() {
 
           <ScallopFrame frameColor="bg-brand-teal" className="aspect-[4/5] w-full">
             <Image
-              src="/C0328T01.JPG"
-              alt="SKS World School students playing together in the ball pit"
+              src="/C0338T01.png"
+              alt="SKS World School students clapping and cheering together"
               fill
               priority
               sizes="(max-width: 1024px) 90vw, 45vw"

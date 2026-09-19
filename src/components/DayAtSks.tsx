@@ -15,8 +15,8 @@ export default function DayAtSks() {
           <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-brand-orange/15 blur-2xl" aria-hidden="true" />
           <div className="overflow-hidden rounded-[2rem] border-8 border-brand-cream shadow-soft">
             <Image
-              src="/C0364T01.JPG"
-              alt="SKS World School students with folded hands during morning assembly"
+              src="/C0351T01.png"
+              alt="SKS World School students clapping during morning assembly"
               width={700}
               height={750}
               className="h-auto w-full object-cover"

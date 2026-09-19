@@ -31,8 +31,8 @@ export default function WhyChooseUs() {
 
           <BlobFrame className="aspect-[7/6] w-full">
             <Image
-              src="/C0318T01.JPG"
-              alt="Children and a teacher in the SKS World School indoor activity area"
+              src="/C0291T01.png"
+              alt="Smiling SKS World School students playing in the ball pit"
               fill
               sizes="(max-width: 1024px) 90vw, 45vw"
               className="object-cover"
