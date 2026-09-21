@@ -33,8 +33,8 @@ function validate(values: FormState): FormErrors {
   const digitsOnly = values.phone.replace(/\D/g, "");
   if (!values.phone.trim()) {
     errors.phone = "Please enter a phone number.";
-  } else if (digitsOnly.length !== 10) {
-    errors.phone = "Please enter a valid 10-digit phone number.";
+  } else if (!/^[6-9]\d{9}$/.test(digitsOnly.slice(-10))) {
+    errors.phone = "Please enter a valid 10-digit mobile number starting with 6, 7, 8 or 9.";
   }
 
   if (values.email.trim() && !EMAIL_REGEX.test(values.email.trim())) {
@@ -204,8 +204,7 @@ export default function EnquiryModal({ isOpen, onClose, onSubmitted }: EnquiryMo
           Admissions Open {SESSION}
         </h2>
         <p id="enquiry-modal-subtext" className="mt-1 text-sm text-brand-ink/60">
-          {/* PLACEHOLDER copy — adjust response-time messaging as needed */}
-          Share a few details and our admissions team will get back to you within 24 hours.
+          Get the fee structure, seat availability and campus visit slots. Our admissions team will call you back shortly.
         </p>
 
         {status === "success" ? (
@@ -345,7 +344,7 @@ export default function EnquiryModal({ isOpen, onClose, onSubmitted }: EnquiryMo
               disabled={status === "submitting"}
               className="w-full rounded-full bg-brand-pink px-8 py-4 text-base font-extrabold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-pink/90 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {status === "submitting" ? "Submitting..." : "Submit Enquiry"}
+              {status === "submitting" ? "Submitting..." : "Get Fee Structure & Call Back"}
             </button>
 
             {status === "error" && (

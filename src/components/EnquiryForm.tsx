@@ -21,7 +21,7 @@ const initialState: FormState = {
   message: "",
 };
 
-const PHONE_REGEX = /^[+]?[\d\s-]{10,15}$/;
+const INDIAN_MOBILE_REGEX = /^[6-9]\d{9}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function validate(values: FormState): FormErrors {
@@ -32,12 +32,10 @@ function validate(values: FormState): FormErrors {
   }
   if (!values.phone.trim()) {
     errors.phone = "Please enter a phone number.";
-  } else if (!PHONE_REGEX.test(values.phone.trim())) {
-    errors.phone = "Please enter a valid phone number.";
+  } else if (!INDIAN_MOBILE_REGEX.test(values.phone.replace(/\D/g, "").slice(-10))) {
+    errors.phone = "Please enter a valid 10-digit mobile number starting with 6, 7, 8 or 9.";
   }
-  if (!values.email.trim()) {
-    errors.email = "Please enter an email address.";
-  } else if (!EMAIL_REGEX.test(values.email.trim())) {
+  if (values.email.trim() && !EMAIL_REGEX.test(values.email.trim())) {
     errors.email = "Please enter a valid email address.";
   }
   if (!values.grade) {
@@ -138,7 +136,7 @@ export default function EnquiryForm() {
 
         <div>
           <label htmlFor="email" className="mb-1.5 block text-sm font-bold text-brand-ink">
-            Email
+            Email <span className="font-normal text-brand-ink/50">(optional)</span>
           </label>
           <input
             id="email"
@@ -207,7 +205,7 @@ export default function EnquiryForm() {
         disabled={status === "submitting"}
         className="w-full rounded-full bg-brand-orange px-8 py-4 text-base font-extrabold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-orange/90 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === "submitting" ? "Submitting..." : "Submit Enquiry"}
+        {status === "submitting" ? "Submitting..." : "Get Fee Structure & Call Back"}
       </button>
 
       <div id="enquiry-form-status" role="status" aria-live="polite">

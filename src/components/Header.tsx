@@ -23,7 +23,7 @@ export default function Header() {
             className="h-9 w-auto sm:h-11"
           />
           <span className="hidden text-xs font-semibold text-brand-ink/60 sm:block">
-            Greater Noida West
+            CBSE School, Greater Noida West
           </span>
         </Link>
 

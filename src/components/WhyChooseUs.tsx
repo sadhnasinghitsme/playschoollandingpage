@@ -31,8 +31,8 @@ export default function WhyChooseUs() {
 
           <BlobFrame className="aspect-[7/6] w-full">
             <Image
-              src="/C0291T01.png"
-              alt="Smiling SKS World School students playing in the ball pit"
+              src="/stage-performance.jpeg"
+              alt="SKS World School students performing a dance on stage with colourful pom-poms"
               fill
               sizes="(max-width: 1024px) 90vw, 45vw"
               className="object-cover"
@@ -52,11 +52,10 @@ export default function WhyChooseUs() {
           <div className="mt-5 flex gap-4">
             <span aria-hidden="true" className="w-1 shrink-0 rounded-full bg-brand-teal" />
             <p className="text-lg text-brand-ink/70">
-              {/* PLACEHOLDER copy — replace with school-specific messaging */}
-              At SKS World School, Greater Noida West, we believe early years shape
-              a lifetime of learning. Our nurturing educators, safe campus, and
-              joyful curriculum help every child build strong foundations &mdash;
-              academically, socially, and emotionally.
+              At SKS World School, a CBSE school in Greater Noida West, we
+              believe the early years shape a lifetime of learning. Our nurturing
+              educators, safe campus and joyful curriculum help every child build
+              strong foundations &mdash; academically, socially and emotionally.
             </p>
           </div>
 

@@ -32,28 +32,28 @@ export default function Hero() {
               className="absolute -z-10 h-24 w-40 sm:h-28 sm:w-48"
             />
             <span className="relative rotate-[-3deg] font-script text-2xl font-bold text-rose-600 sm:text-3xl">
-              Admissions Are Open!
+              Admissions Open 2026-27
             </span>
           </div>
 
           <h1 className="text-4xl font-extrabold uppercase leading-[1.08] tracking-tight text-brand-ink sm:text-5xl">
-            Building Bright Futures
+            School Admission
             <br />
-            Through Joyful
+            in Greater Noida West:
             <br />
-            <span className="text-brand-pink">Learning</span>
+            <span className="text-brand-pink">Playschool to Class 5</span>
           </h1>
 
           <p className="mt-4 font-script text-2xl font-semibold text-brand-pink sm:text-3xl">
-            Where learning feels like play
+            Building Bright Futures Through Joyful Learning
           </p>
 
           <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-gray-500 lg:mx-0">
-            {/* PLACEHOLDER copy — replace with real school messaging */}
-            Welcome to SKS World School, Greater Noida West. We&apos;re opening
-            our doors for session 2026-27, from Playschool to Class 5 &mdash;
-            come see why parents trust us with their child&apos;s first steps
-            in learning.
+            SKS World School is a CBSE-affiliated, co-educational,
+            English-medium school in Sector 16, Greater Noida West (Noida
+            Extension). Admissions for 2026-27 are open from Playschool to
+            Class 5. Visit the campus, meet the team and see the classrooms
+            before you decide.
           </p>
 
           <div className="mt-8 flex justify-center lg:justify-start">
@@ -80,8 +80,8 @@ export default function Hero() {
 
           <ScallopFrame frameColor="bg-brand-teal" className="aspect-[4/5] w-full">
             <Image
-              src="/C0338T01.png"
-              alt="SKS World School students clapping and cheering together"
+              src="/C0291T01.png"
+              alt="Smiling SKS World School students playing in the ball pit"
               fill
               priority
               sizes="(max-width: 1024px) 90vw, 45vw"

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export type FeatureColor = "pink" | "lavender" | "blue";
 
 const COLOR_CLASSES: Record<FeatureColor, string> = {
@@ -10,13 +12,25 @@ type FeatureCardProps = {
   title: string;
   text: string;
   color: FeatureColor;
+  image?: { src: string; alt: string };
 };
 
-export default function FeatureCard({ title, text, color }: FeatureCardProps) {
+export default function FeatureCard({ title, text, color, image }: FeatureCardProps) {
   return (
     <article
       className={`relative flex h-full flex-col overflow-hidden rounded-3xl p-8 ${COLOR_CLASSES[color]}`}
     >
+      {image && (
+        <div className="relative -mx-8 -mt-8 mb-6 aspect-[16/10] overflow-hidden">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+          />
+        </div>
+      )}
       <h3 className="text-lg font-extrabold text-brand-pink sm:text-xl">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-gray-700">{text}</p>
 

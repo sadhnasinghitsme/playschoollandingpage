@@ -44,19 +44,19 @@ export default function Curriculum() {
     <Section
       id="curriculum"
       eyebrow="Our Curriculum"
-      title="Age-Appropriate Learning, Every Step of the Way"
-      subtitle="From first steps in Playschool to building strong fundamentals by Class 5."
+      title="CBSE Curriculum From Playschool to Class 5"
+      subtitle="From first steps in Playschool and Nursery to strong fundamentals by Class 5, in an English-medium, co-educational CBSE school."
       className="bg-brand-cream/75"
     >
       <Blob className="-left-24 bottom-0 h-64 w-64" color="bg-brand-purple/20" />
       <div className="relative z-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
         <CurriculumColumn
-          heading="Playschool &amp; Pre-Primary"
+          heading="Playschool, Nursery &amp; KG (Pre-Primary)"
           accent="text-brand-pink"
           groups={PRE_PRIMARY_CURRICULUM}
         />
         <CurriculumColumn
-          heading="Primary (Classes 1 - 5)"
+          heading="Primary: CBSE Classes 1 to 5"
           accent="text-brand-blue"
           groups={PRIMARY_CURRICULUM}
         />

@@ -8,8 +8,8 @@ export default function Highlights() {
   return (
     <Section
       eyebrow="Get To Know Us"
-      title="What Sets SKS World School Apart"
-      subtitle="Three pillars that shape every child's journey with us, from their first day of Playschool onward."
+      title="What Sets Our Greater Noida West School Apart"
+      subtitle="Three pillars that shape every child's journey with us, from the first day of Playschool to Class 5."
       className="bg-white/80"
     >
       <ul className="grid list-none grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -18,6 +18,7 @@ export default function Highlights() {
             <HighlightCard
               title={item.title}
               body={item.body}
+              image={item.image}
               color={COLOR_ROTATION[index % COLOR_ROTATION.length]}
             />
           </li>

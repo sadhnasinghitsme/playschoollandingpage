@@ -25,9 +25,9 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "SKS World School, Greater Noida West | Admissions Open 2026-27",
+  title: "Nursery Admission 2026-27 | CBSE School Greater Noida West",
   description:
-    "Admissions open for Playschool to Class 5 at SKS World School, Greater Noida West for session 2026-27. Experienced faculty, safe campus, activity-based learning.",
+    "SKS World School, Sector 16, Greater Noida West. CBSE co-ed English-medium school. Admissions open for Playschool to Class 5. Book a campus visit.",
 };
 
 export default function RootLayout({

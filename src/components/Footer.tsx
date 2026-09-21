@@ -22,9 +22,9 @@ export default function Footer() {
             />
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed">
-            {/* PLACEHOLDER copy — replace with the real school description */}
-            A nurturing school in Greater Noida West dedicated to holistic,
-            joyful learning for Playschool through Class 5 students.
+            CBSE-affiliated, co-educational, English-medium school in Sector 16,
+            Greater Noida West (Noida Extension), with admissions open for
+            Playschool to Class 5.
           </p>
         </div>
 
@@ -48,7 +48,6 @@ export default function Footer() {
             Contact Us
           </h3>
           <ul className="mt-4 space-y-3 text-sm">
-            {/* PLACEHOLDER contact details — replace with real information */}
             <li>{SCHOOL_ADDRESS}</li>
             <li>
               <a href={`tel:${PHONE_TEL}`} className="transition hover:text-brand-orange">
@@ -65,8 +64,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-6 text-center text-xs text-white/50">
-        &copy; {new Date().getFullYear()} SKS World School, Greater Noida West. All rights reserved.
-        {" "}Placeholder content &mdash; replace before launch.
+        &copy; {new Date().getFullYear()} SKS World School, Sector 16, Greater Noida West. All rights reserved.
       </div>
     </footer>
   );

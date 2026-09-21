@@ -9,7 +9,7 @@ export const PHONE_TEL = "+919891081270";
 
 export const WHATSAPP_NUMBER = "919891081270";
 export const WHATSAPP_MESSAGE = encodeURIComponent(
-  `Hi SKS World School, I would like to enquire about admissions for session ${SESSION} (Playschool to Class 5). Please share more details.`
+  `Hi, I want to know about admission ${SESSION} at SKS World School.`
 );
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
@@ -27,61 +27,75 @@ export const NAV_LINKS = [
 export type UspItem = {
   title: string;
   text: string;
+  image: { src: string; alt: string };
 };
 
 export const USP_ITEMS: UspItem[] = [
   {
     title: "Experienced Faculty",
-    text: "Warm, trained educators who specialize in early childhood and primary learning.",
+    text: "Trained educators for early years and primary classes, following CBSE-aligned lesson plans.",
+    image: { src: "/C0318T01.JPG", alt: "A teacher with young students lined up in the indoor activity area" },
   },
   {
+    // Unchanged on purpose: the school has not yet confirmed CCTV, trained staff and pick-up/drop-off protocols.
     title: "Safe & Secure Campus",
     text: "CCTV-monitored premises, trained staff, and secure pick-up/drop-off protocols.",
+    image: { src: "/school-gate.jpeg", alt: "The SKS World School main gate and entrance building" },
   },
   {
-    title: "Activity-Based Learning",
-    text: "Hands-on, play-based methods that make learning joyful and memorable.",
+    title: "Play-Based Early Years",
+    text: "Our play school and nursery programme builds language, numeracy and motor skills through stories, phonics and hands-on play.",
+    image: { src: "/C0326T01.JPG", alt: "Young children playing together at the ball pit" },
   },
   {
-    title: "Modern Infrastructure",
-    text: "Bright classrooms, smart boards, and child-friendly spaces.",
+    title: "Indoor Play Area & Classrooms",
+    text: "A dedicated indoor play area and child-friendly classrooms for young learners.",
+    image: { src: "/C0355T01.JPG", alt: "Children riding toy cars in the spacious indoor play hall with teachers nearby" },
   },
   {
-    title: "Sports & Arts",
-    text: "Dedicated time for sports, music, dance, and art.",
+    title: "Large Sports Grounds",
+    text: "A 150-metre playground with basketball, lawn tennis, cricket nets, badminton and a skating rink, plus music, dance and art.",
+    image: { src: "/gallery-basketball-court.jpeg", alt: "Students playing basketball on the school's outdoor sports court" },
   },
   {
-    title: "Individual Attention",
-    text: "Small batch sizes so every child is seen and heard.",
+    title: "CBSE-Affiliated Curriculum",
+    text: "A CBSE-aligned programme from Class 1, built on an activity-led foundation in Playschool, Nursery and KG.",
+    image: { src: "/gallery-classroom-black-white.jpeg", alt: "Students with their teacher in front of the classroom board" },
   },
 ];
 
 export type HighlightItem = {
   title: string;
   body: string;
+  image: { src: string; alt: string; fit?: "cover" | "contain" };
 };
 
 export const HIGHLIGHT_ITEMS: HighlightItem[] = [
   {
-    title: "Holistic Curriculum",
-    body: "An age-appropriate, activity-led curriculum from Playschool to Class 5 that builds strong foundations.",
+    title: "Holistic CBSE Curriculum",
+    body: "An age-appropriate, activity-led programme from Playschool to Class 5 that builds strong foundations in language, maths and values.",
+    image: { src: "/download.jpg.jpeg", alt: "Central Board of Secondary Education (CBSE) logo", fit: "contain" },
   },
   {
-    title: "Our Campus & Infrastructure",
-    body: "Thoughtfully designed classrooms and safe play areas that celebrate childhood and holistic development.",
+    title: "Our Campus in Sector 16",
+    body: "A campus with a 150-metre playground, sports courts, a skating rink and a dedicated indoor play area.",
+    image: { src: "/school-gate.jpeg", alt: "The SKS World School campus building behind the main gate" },
   },
   {
     title: "Partnering With Parents",
-    body: "Regular parent engagement and guidance so families stay involved in every step of the learning journey.",
+    body: "Regular parent engagement and guidance so families stay involved in every step.",
+    image: { src: "/C0365T01.JPG", alt: "Teachers and students together at morning assembly" },
   },
 ];
 
 export const WHY_CHOOSE_POINTS = [
+  // Unchanged on purpose: needs a real class size / ratio from the school.
   "Low student-to-teacher ratio",
   "Holistic development (academics, sports, arts, values)",
-  "Modern certified curriculum",
+  "CBSE-affiliated, activity-led curriculum",
   "Regular parent-teacher interaction",
-  "Nutritious meals & hygienic campus",
+  // Neutral wording until the school confirms whether meals are provided.
+  "Clean, well-maintained campus",
 ];
 
 export type CurriculumGroup = {
@@ -145,7 +159,7 @@ export const PRIMARY_CURRICULUM: CurriculumGroup[] = [
     items: [
       "Structured curriculum in Maths, EVS, Language & Science",
       "Concept-based learning with regular assessments",
-      "Digital & smart-class integration",
+      "CBSE-aligned syllabus with regular assessments",
     ],
   },
   {
@@ -201,8 +215,7 @@ export const DAILY_ROUTINE = [
 export const GRADE_OPTIONS = [
   "Playschool",
   "Nursery",
-  "LKG",
-  "UKG",
+  "KG",
   "Class 1",
   "Class 2",
   "Class 3",
@@ -216,6 +229,8 @@ export type Testimonial = {
   relation: string;
 };
 
+// PLACEHOLDER: these are not real parent reviews. Replace with genuine,
+// consented reviews before running ads (see the content guide, section 3.12).
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
@@ -237,17 +252,31 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
+// Ordered so neighbouring tiles show different places (play area, stage,
+// sports, classroom, assembly) instead of clustering.
 export const GALLERY_IMAGES = [
-  { src: "/C0322T01.JPG", alt: "Students playing basketball in the indoor activity area" },
-  { src: "/C0318T01.JPG", alt: "Children and a teacher in the indoor activity area" },
-  { src: "/C0334T01.JPG", alt: "A joyful student sliding into a colourful ball pit" },
-  { src: "/C0329T01.JPG", alt: "A student coming down the indoor play slide" },
-  { src: "/C0333T01.JPG", alt: "Students on the slide with a teacher nearby" },
-  { src: "/C0355T01.JPG", alt: "Young children riding toy cars with their teachers" },
-  { src: "/C0365T01.JPG", alt: "Students and teachers during morning assembly" },
-  { src: "/C0367T01.JPG", alt: "Class lined up for morning assembly" },
-  { src: "/C0328T01.JPG", alt: "Students playing together in the ball pit" },
-  { src: "/C0364T01.JPG", alt: "Students with folded hands during morning assembly" },
+  { src: "/C0334T01.JPG", alt: "A student sliding into the ball pit at SKS World School" },
+  { src: "/gallery-stage-animals.jpeg", alt: "Young children in animal costumes on stage during a school performance" },
+  { src: "/C0326T01.JPG", alt: "Young children at the ball pit in the indoor play area" },
+  { src: "/C0365T01.JPG", alt: "Students and teachers at morning assembly, SKS World School, Sector 16" },
+  { src: "/gallery-classroom-purple.jpeg", alt: "Students in purple costumes posing with their teacher in the classroom" },
+  { src: "/C0328T01.JPG", alt: "Ball pit in the indoor play area, SKS World School" },
+  { src: "/gallery-stage-dance-blue.jpeg", alt: "Girls in blue dresses dancing on stage during a school performance" },
+  { src: "/C0338T01.png", alt: "Smiling SKS World School children clapping together in the play hall" },
+  { src: "/C0367T01.JPG", alt: "Class lined up for morning assembly at SKS World School, Sector 16" },
+  { src: "/gallery-classroom-orange.jpeg", alt: "Students in orange and gold costumes with their teacher in a decorated classroom" },
+  { src: "/C0329T01.JPG", alt: "A child on the indoor slide at SKS World School Greater Noida West" },
+  { src: "/gallery-stage-show-wide.jpeg", alt: "Students performing on a large stage during a school event" },
+  { src: "/C0355T01.JPG", alt: "Young children riding toy cars in the indoor play area, SKS World School" },
+  { src: "/gallery-classroom-red.jpeg", alt: "Students in red and gold costumes with their teacher in the classroom" },
+  { src: "/C0318T01.JPG", alt: "Children and a teacher in the indoor activity area at SKS World School Greater Noida West" },
+  { src: "/gallery-classroom-purple-white.jpeg", alt: "Students in purple and white costumes with their teacher in a decorated classroom" },
+  { src: "/C0364T01.JPG", alt: "Students with folded hands during assembly at SKS World School, Sector 16" },
+  { src: "/gallery-classroom-sequin.jpeg", alt: "Students in sparkling costumes with their teacher in a decorated classroom" },
+  { src: "/C0322T01.JPG", alt: "Students playing basketball in the indoor play area at SKS World School" },
+  { src: "/gallery-classroom-black-white.jpeg", alt: "Students in black and white outfits with their teacher in the classroom" },
+  { src: "/C0333T01.JPG", alt: "Students on the indoor slide with a teacher nearby, SKS World School" },
+  { src: "/gallery-classroom-green.jpeg", alt: "Students in green jackets with their teacher in the classroom" },
 ];
 
 export const FOOTER_QUICK_LINKS = [
