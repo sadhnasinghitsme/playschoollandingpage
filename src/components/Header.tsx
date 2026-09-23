@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { NAV_LINKS, PHONE_DISPLAY, PHONE_TEL } from "@/lib/data";
+import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/data";
 import { useEnquiryModal } from "./EnquiryModalContext";
 
 export default function Header() {
@@ -26,18 +26,6 @@ export default function Header() {
             CBSE School, Greater Noida West
           </span>
         </Link>
-
-        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-bold text-brand-ink/80 transition hover:text-brand-orange"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
 
         <div className="hidden items-center gap-4 md:flex">
           <a
@@ -73,16 +61,6 @@ export default function Header() {
       {menuOpen && (
         <div id="mobile-menu" className="border-t border-black/5 bg-brand-cream md:hidden">
           <nav aria-label="Mobile" className="flex flex-col gap-1 px-4 py-4">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-base font-bold text-brand-ink/80 hover:bg-brand-orange/10 hover:text-brand-orange"
-              >
-                {link.label}
-              </a>
-            ))}
             <a
               href={`tel:${PHONE_TEL}`}
               className="mt-2 rounded-lg px-3 py-2.5 text-base font-bold text-brand-ink/80 hover:bg-brand-orange/10 hover:text-brand-orange"
